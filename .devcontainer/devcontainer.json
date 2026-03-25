@@ -2,7 +2,11 @@
     "name": "Advanced Machine Learning",
     
     // "image": "ghcr.io/socstech/cmp9137:latest",
-    "runArgs": ["--gpus=all", "--name=cmp9137-devcontainer"],
+    "runArgs": ["--gpus=all", 
+        "--name=cmp9137-devcontainer",
+        "--env=DISPLAY=${localEnv:DISPLAY}",
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix"
+    ],
     "build": { "dockerfile": "Dockerfile" },
 
     "customizations": {
